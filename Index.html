@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Wall</title>
+    <style>
+        body {
+            background-color: #F44336; /* Bright color */
+            color: #FFFFFF; /* Extreme contrast */
+            font-size: 20px;
+            margin: 0;
+        }
+
+        #header {
+            background-color: #000000; /* Contrast color */
+            padding: 10px;
+            text-align: center;
+        }
+
+        #ad-container {
+            background-color: #000000; /* Contrast color */
+            padding: 10px;
+            text-align: center;
+        }
+
+        #content {
+            padding: 10px;
+        }
+
+        #message-input {
+            width: 100%;
+            background-color: #000000; /* Contrast color */
+            color: #FFFFFF; /* Extreme contrast */
+            font-size: 24px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        #message-container {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>My Wall</h1>
+        <div id="ad-container">
+            <!-- Ads can be placed here -->
+        </div>
+    </div>
+    <div id="content">
+        <div id="ad-right">
+            <!-- Google ads can be placed here -->
+        </div>
+        <div id="message-input">
+            <input type="text" placeholder="Write something..." id="message-text">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div id="message-container">
+            <!-- Visitor messages will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message-text").value;
+            var messageElement = document.createElement("p");
+            messageElement.innerText = message;
+            document.getElementById("message-container").appendChild(messageElement);
+            document.getElementById("message-text").value = "";
+        }
+    </script>
+</body>
+</html>
